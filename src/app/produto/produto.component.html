@@ -1,0 +1,17 @@
+<div class="box">
+  <h1>Area do Produto</h1>
+  <p>Novos Produtos</p>
+  <form class="form-box" [formGroup]="formCliente" (ngSubmit)="cadastrar()">
+    <input
+      formControlName="nome"
+      placeholder="Nome"
+      type="text"
+      maxlength="64"
+    />
+    <input formControlName="valor" placeholder="valor" type="text" />
+
+    <button type="submit" [disabled]="!formCliente.valid">Cadastrar</button>
+  </form>
+  <p>{{ formCliente.getRawValue() | json }}</p>
+  <p>Form valido: {{ formCliente.valid ? "Sim" : "Não" }}</p>
+</div>

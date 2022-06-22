@@ -1,0 +1,33 @@
+<div class="box">
+  <h1>Area do Fornecedor</h1>
+  <p>Novos Fornecedores</p>
+  <form class="form-box" [formGroup]="formCliente" (ngSubmit)="cadastrar()">
+    <input
+      formControlName="nome"
+      placeholder="Nome"
+      type="text"
+      maxlength="64"
+    />
+    <input
+      formControlName="cnpj"
+      placeholder="Cnpj"
+      type="text"
+      maxlength="14"
+    />
+    <input
+      formControlName="email"
+      placeholder="Email"
+      type="email"
+      maxlength="32"
+    />
+    <input
+      formControlName="dataNascimento"
+      placeholder="Data de Nascimento"
+      type="date"
+    />
+
+    <button type="submit" [disabled]="!formCliente.valid">Cadastrar</button>
+  </form>
+  <p>{{ formCliente.getRawValue() | json }}</p>
+  <p>Form valido: {{ formCliente.valid ? "Sim" : "Não" }}</p>
+</div>

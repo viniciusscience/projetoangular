@@ -1,0 +1,19 @@
+.box {
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  p {
+    font-variant: small-caps;
+  }
+  button {
+    padding: 6px;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+  }
+  button:hover {
+    background-color: green;
+  }
+}

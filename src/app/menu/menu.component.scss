@@ -1,0 +1,15 @@
+.menu li {
+  display: inline-block;
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+a:hover {
+  background-color: aquamarine;
+  border-radius: 20px;
+}
