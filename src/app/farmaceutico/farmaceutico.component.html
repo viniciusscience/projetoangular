@@ -1,7 +1,8 @@
 <div class="box">
   <h1>Area do Farmaceutico</h1>
   <p>Cadastre-se</p>
-  <form class="form-box" [formGroup]="formCliente" (ngSubmit)="cadastrar()">
+
+  <form class="form-box" [formGroup]="form" (ngSubmit)="cadastrar()">
     <input
       formControlName="nome"
       placeholder="Nome"
@@ -9,24 +10,29 @@
       maxlength="64"
     />
     <input formControlName="cpf" placeholder="Cpf" type="text" maxlength="14" />
-    <input
-      formControlName="email"
-      placeholder="Email"
-      type="email"
-      maxlength="32"
-    />
+
     <input
       formControlName="dataNascimento"
       placeholder="Data de Nascimento"
       type="date"
     />
     <input
-      formControlName="PromocaoDia"
+      formControlName="promocaododia"
       placeholder="Promocao do dia"
       type="text"
     />
-    <button type="submit" [disabled]="!formCliente.valid">Cadastrar</button>
+    <button type="submit" [disabled]="!form.valid">Cadastrar</button>
   </form>
-  <p>{{ formCliente.getRawValue() | json }}</p>
-  <p>Form valido: {{ formCliente.valid ? "Sim" : "Não" }}</p>
+  <hr />
+  <h2>Meus farmaceuticos</h2>
+  <ul>
+    <li *ngFor="let farmaceutico of list">
+      <span>{{ farmaceutico.id }} </span>
+      <span>{{ farmaceutico.nome }} </span>
+      <span>{{ farmaceutico.documento }}</span>
+      <span>{{ farmaceutico.aniver | date: "dd/MM/yyyy" }}</span>
+      <span>{{ farmaceutico.promocaododia }} </span>
+      <hr />
+    </li>
+  </ul>
 </div>
