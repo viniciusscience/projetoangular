@@ -22,17 +22,28 @@
       type="text"
     />
     <button type="submit" [disabled]="!form.valid">Cadastrar</button>
+    <hr />
+    <h2>Meus Farmaceutico</h2>
+    <table class="tabelinha">
+      <tr>
+        <th>Nome</th>
+        <th>Data de Nascimento</th>
+        <th>Idade</th>
+        <th>CPF</th>
+        <th>PromocaodoDia</th>
+        <th>Ações</th>
+      </tr>
+      <tr *ngFor="let Farmaceutico of list">
+        <td>{{ Farmaceutico.nome }}</td>
+        <td>{{ Farmaceutico.aniver | date: "dd/MM/yyyy" }}</td>
+        <td>{{ Farmaceutico.idade }}</td>
+        <td>{{ Farmaceutico.promocaododia }}</td>
+
+        <td>
+          <button class="botao1" (click)="editar(Farmaceutico)">Editar</button>
+          <button class="botao" (click)="deletar(Farmaceutico.id)"></button>
+        </td>
+      </tr>
+    </table>
   </form>
-  <hr />
-  <h2>Meus farmaceuticos</h2>
-  <ul>
-    <li *ngFor="let farmaceutico of list">
-      <span>{{ farmaceutico.id }} </span>
-      <span>{{ farmaceutico.nome }} </span>
-      <span>{{ farmaceutico.documento }}</span>
-      <span>{{ farmaceutico.aniver | date: "dd/MM/yyyy" }}</span>
-      <span>{{ farmaceutico.promocaododia }} </span>
-      <hr />
-    </li>
-  </ul>
 </div>
